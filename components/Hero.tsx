@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import { useI18n } from "@/components/LanguageProvider";
 
 export default function Hero() {
+  const { t } = useI18n();
+  const hero = t("hero");
+
   return (
     <section
       className="
@@ -37,26 +41,22 @@ export default function Hero() {
             className="max-w-xl"
           >
             <p className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1 text-sm text-white/90 backdrop-blur">
-              SIM Group • Industrial Manufacturing
+              {hero.badge}
             </p>
 
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl leading-[1.05]">
-              Design, Mold & Plastic Injection
-              <span className="block text-brand-500">From idea to final part</span>
+              {hero.title1}
+              <span className="block text-brand-500">{hero.title2}</span>
             </h1>
 
-            <p className="mt-6 text-lg text-white/80">
-              We support clients with product development, mold making, injection
-              molding, and reliable industrial production — built for precision,
-              quality, and on-time delivery.
-            </p>
+            <p className="mt-6 text-lg text-white/80">{hero.desc}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-white shadow-lg shadow-brand-900/30 hover:bg-brand-900 transition"
               >
-                Contact Us <ArrowRight size={18} />
+                {hero.contactCta} <ArrowRight size={18} />
               </a>
             </div>
 
@@ -64,15 +64,15 @@ export default function Hero() {
             <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-sm text-white/70">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-brand-500" />
-                Tooling & Mold Fabrication
+                {hero.trust1}
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-brand-500" />
-                Plastic Injection Production
+                {hero.trust2}
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-brand-500" />
-                Quality Control & Delivery
+                {hero.trust3}
               </div>
             </div>
           </motion.div>
@@ -97,22 +97,23 @@ export default function Hero() {
                 className="h-16 w-16 object-contain"
               />
               <div>
-                <div className="text-xl font-bold">            Mechanical industrial company
-</div>
-                <div className="text-sm text-steel-500">
-                  Quality • Precision • Delivery
+                <div className="text-xl font-bold">
+                  {hero.cardTitle}
                 </div>
+                <div className="text-sm text-steel-500">{hero.cardSub}</div>
               </div>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3 text-center">
               <div className="rounded-xl bg-steel-50 p-4">
                 <div className="text-2xl font-extrabold text-brand-500">30+</div>
-                <div className="text-xs text-steel-500">Years</div>
+                <div className="text-xs text-steel-500">{hero.yearsLabel}</div>
               </div>
               <div className="rounded-xl bg-steel-50 p-4">
-                <div className="text-2xl font-extrabold text-brand-500">high</div>
-                <div className="text-xs text-steel-500">Production</div>
+                <div className="text-2xl font-extrabold text-brand-500">
+                  {hero.prodValue}
+                </div>
+                <div className="text-xs text-steel-500">{hero.prodLabel}</div>
               </div>
             </div>
           </motion.div>
