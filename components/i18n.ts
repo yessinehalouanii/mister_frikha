@@ -11,11 +11,11 @@ export const translations = {
       why: "Why",
       contact: "Contact",
       cta: "Start Cooperation",
-      brand: "Mechanical industrial company",
+      brand: "Mechanical Industrial Company",
     },
     hero: {
       badge: "SIM • Industrial Manufacturing",
-      title1: "Design, Mold & Plastic Injection",
+      title1: "Design & Manufacturing of Plastic Injection Molds",
       title2: "From idea to final part",
       desc:
         "We support clients with product development, mold making, injection molding, and reliable industrial production — built for precision, quality, and on-time delivery.",
@@ -23,7 +23,7 @@ export const translations = {
       trust1: "Tooling & Mold Fabrication",
       trust2: "Plastic Injection Production",
       trust3: "Quality Control & Delivery",
-      cardTitle: "Mechanical industrial company",
+      cardTitle: "Mechanical Industrial Company",
       cardSub: "Quality • Precision • Delivery",
       yearsLabel: "Years",
       prodLabel: "Production",
@@ -31,7 +31,7 @@ export const translations = {
     },
     about: {
       badge: "About SIM",
-      title: "Industrial Mold & Plastic Injection Expertise",
+      title: "Industrial Molds & Plastic Injection Expertise",
       desc:
         "We design and manufacture precision molds and plastic parts with strong focus on quality, cost control, and on-time delivery.",
       b1: "Decades of mold design expertise",
@@ -51,12 +51,11 @@ export const translations = {
     },
     products: {
       title: "Products",
-      desc: "Mold → Product (side by side).",
       mold: "Mold",
       product: "Product",
       items: {
         p1: "Unscrewing Mold",
-        p2: "Molds with hydraulic or pneumatic cylinder",
+        p2: "Molds with Hydraulic or Pneumatic Cylinder",
         p3: "All types of blow molds : PET / PP / HDPE",
         p4: "Other injection mold with slides",
       },
@@ -99,7 +98,7 @@ export const translations = {
       address: "Gremda Km 10, Sfax, Tunisia",
     },
     footer: {
-      rights: "© {year} Mechanical industrial company. All rights reserved.",
+      rights: "© {year} Mechanical Industrial Company. All rights reserved.",
       contact: "Contact",
       catalog: "Catalog",
     },

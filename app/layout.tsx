@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SIM Group • Industrial Manufacturing",
+  title: "Mechanical Industrial Company",
   description:
     "Design, mold & plastic injection — from idea to final part.",
 };

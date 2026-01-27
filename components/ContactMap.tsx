@@ -60,27 +60,28 @@ export default function ContactMap() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 items-start">
         <div className="rounded-2xl bg-white p-6 shadow">
-          <div className="space-y-3 text-sm">
+          {/* ✅ Center all contact rows */}
+          <div className="space-y-3 text-sm text-center">
             {/* ✅ Clickable map row (icon + address opens Google Maps) */}
             <a
               href={MAP_OPEN_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded-lg p-1 -m-1 hover:bg-black/5 transition"
+              className="flex items-center justify-center gap-2 rounded-lg p-1 -m-1 hover:bg-black/5 transition"
               title="Open location in Google Maps"
             >
               <MapPin className="text-brand-500" size={18} />
               <span className="hover:underline">{c.address}</span>
             </a>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <Phone className="text-brand-500" size={18} />
-              <span>+216 24731700 | 28731800 | 24731500</span>
+              <span>+216 24731500 | 24731700 | 28831700</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <Mail className="text-brand-500" size={18} />
-              <span>sim.ziedfrikha@gmail.com</span>
+              <span>contact@simfrikha.com</span>
             </div>
           </div>
 
@@ -125,7 +126,11 @@ export default function ContactMap() {
             </button>
 
             {status && (
-              <p className={`text-sm ${status.type === "ok" ? "text-green-600" : "text-red-600"}`}>
+              <p
+                className={`text-sm ${
+                  status.type === "ok" ? "text-green-600" : "text-red-600"
+                }`}
+              >
                 {status.msg}
               </p>
             )}

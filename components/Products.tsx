@@ -36,7 +36,6 @@ export default function Products() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="text-3xl font-extrabold">{products.title}</h2>
-          <p className="mt-2 text-steel-500 max-w-2xl">{products.desc}</p>
         </div>
       </div>
 

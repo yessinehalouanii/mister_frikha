@@ -44,7 +44,7 @@ export default function Clients() {
     <section className="mx-auto max-w-7xl px-6 py-20">
       {/* Header */}
       <div className="max-w-3xl">
-        <p className="text-sm font-semibold text-brand-500 uppercase">
+        <p className="text-sm font-black text-brand-500 uppercase">
           {clients.badge}
         </p>
         <h2 className="mt-2 text-3xl font-extrabold text-steel-900">
