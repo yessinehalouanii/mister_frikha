@@ -87,6 +87,9 @@ export const translations = {
     contact: {
       title: "Contact",
       desc: "Send a message or find us on the map.",
+      subtitle: "We're here to help you succeed",
+      location: "Location",
+      phone: "Phone",
       name: "Your name",
       email: "Email",
       message: "Message",
@@ -190,6 +193,9 @@ export const translations = {
     contact: {
       title: "Contact",
       desc: "Envoyez un message ou trouvez-nous sur la carte.",
+      subtitle: "Nous sommes là pour vous aider à réussir",
+      location: "Emplacement",
+      phone: "Téléphone",
       name: "Votre nom",
       email: "E-mail",
       message: "Message",

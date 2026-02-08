@@ -57,19 +57,19 @@ export default function ContactMap() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: t('contact.location') || 'Location',
+      title: c.location || 'Location',
       content: 'Gremda Km 10, Sfax, Tunisia',
       link: MAP_OPEN_URL
     },
     {
       icon: Phone,
-      title: t('contact.phone') || 'Phone',
+      title: c.phone || 'Phone',
       content: '+216 24 731 500\n+216 24 731 700 | +216 28 831 700',
       link: 'tel:+21624731500'
     },
     {
       icon: Mail,
-      title: t('contact.email') || 'Email',
+      title: c.email || 'Email',
       content: 'contact@simfrikha.com',
       link: 'https://mail.google.com/mail/?view=cm&to=contact@simfrikha.com'
     }
