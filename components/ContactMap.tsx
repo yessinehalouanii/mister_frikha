@@ -53,95 +53,76 @@ export default function ContactMap() {
     }
   }
 
+  // ✅ Contact info data structure
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: t('contact.location') || 'Location',
+      content: 'Gremda Km 10, Sfax, Tunisia',
+      link: MAP_OPEN_URL
+    },
+    {
+      icon: Phone,
+      title: t('contact.phone') || 'Phone',
+      content: '+216 24 731 500\n+216 24 731 700 | +216 28 831 700',
+      link: 'tel:+21624731500'
+    },
+    {
+      icon: Mail,
+      title: t('contact.email') || 'Email',
+      content: 'contact@simfrikha.com',
+      link: 'https://mail.google.com/mail/?view=cm&to=contact@simfrikha.com'
+    }
+  ];
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-14">
       <h2 className="text-3xl font-extrabold">{c.title}</h2>
       <p className="mt-2 text-steel-500 max-w-2xl">{c.desc}</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 items-start">
-        <div className="rounded-2xl bg-white p-6 shadow">
-          {/* ✅ Center all contact rows */}
-          <div className="space-y-3 text-sm text-center">
-            {/* ✅ Clickable map row (icon + address opens Google Maps) */}
-            <a
-              href={MAP_OPEN_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg p-1 -m-1 hover:bg-black/5 transition"
-              title="Open location in Google Maps"
-            >
-              <MapPin className="text-brand-500" size={18} />
-              <span className="hover:underline">{c.address}</span>
-            </a>
+        {/* ✅ Contact Info Card - Simple & Elegant */}
+        <div className="rounded-2xl bg-gradient-to-br from-brand-50 to-white p-8 shadow-lg border border-brand-100">
+          <div className="space-y-6">
+            {contactInfo.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="flex items-start gap-4 group">
+                  <div className="mt-1 flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+                    <Icon className="text-brand-500 group-hover:text-white transition-colors duration-300" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-steel-600 uppercase tracking-wide mb-1">
+                      {item.title}
+                    </h3>
+                    <a
+                      href={item.link}
+                      target={item.icon === MapPin || item.icon === Mail ? "_blank" : undefined}
+                      rel={item.icon === MapPin || item.icon === Mail ? "noreferrer" : undefined}
+                      className="text-steel-900 hover:text-brand-500 transition-colors duration-200 text-base leading-relaxed whitespace-pre-line"
+                    >
+                      {item.content}
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
 
-            <div className="flex items-center justify-center gap-2">
-              <Phone className="text-brand-500" size={18} />
-              <span>+216 24731500 | 24731700 | 28831700</span>
-            </div>
-
-            <div className="flex items-center justify-center gap-2">
-              <Mail className="text-brand-500" size={18} />
-              <span>contact@simfrikha.com</span>
+            {/* Decorative separator */}
+            <div className="pt-4 border-t border-brand-200/50">
+              <p className="text-sm text-steel-500 italic text-center">
+                {c.subtitle || "We're here to help you succeed"}
+              </p>
             </div>
           </div>
-
-          <form
-            className="mt-6 space-y-3"
-            onSubmit={(e) => {
-              e.preventDefault();
-              sendMessage();
-            }}
-          >
-            <input
-              className="w-full rounded-xl border px-4 py-3"
-              placeholder={c.name}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              autoComplete="name"
-            />
-
-            <input
-              className="w-full rounded-xl border px-4 py-3"
-              placeholder={c.email}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              autoComplete="email"
-              inputMode="email"
-            />
-
-            <textarea
-              className="w-full rounded-xl border px-4 py-3"
-              rows={5}
-              placeholder={c.message}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-xl bg-brand-500 px-4 py-3 text-white hover:bg-brand-900 transition disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {loading ? c.sending : c.send}
-            </button>
-
-            {status && (
-              <p
-                className={`text-sm ${
-                  status.type === "ok" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {status.msg}
-              </p>
-            )}
-          </form>
         </div>
 
+        
         <div className="overflow-hidden rounded-2xl bg-white shadow">
           <iframe
             src={MAP_EMBED_URL}
             width="100%"
-            height="380"
+            height="350"
             style={{ border: 0 }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

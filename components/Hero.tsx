@@ -40,16 +40,16 @@ export default function Hero() {
             transition={{ duration: 0.55 }}
             className="max-w-xl"
           >
-            <p className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1 text-sm text-white/90 backdrop-blur">
+            <p className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm text-white/90 backdrop-blur">
               {hero.badge}
             </p>
 
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl leading-[1.05]">
+            <h1 className="mt-7 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl leading-tight">
               {hero.title1}
-              <span className="block text-brand-500">{hero.title2}</span>
+              <span className="block text-brand-500 mt-1">{hero.title2}</span>
             </h1>
 
-            <p className="mt-6 text-lg text-white/80">{hero.desc}</p>
+            <p className="mt-6 text-base md:text-lg text-white/85 leading-relaxed max-w-lg">{hero.desc}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
