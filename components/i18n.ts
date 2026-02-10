@@ -51,10 +51,10 @@ export const translations = {
     },
     products: {
       title: "Products",
-      mold: "Mold",
+      mold: "Molds",
       product: "Product",
       items: {
-        p1: "Unscrewing Mold",
+        p1: "Unscrewing Molds",
         p2: "Molds with Hydraulic or Pneumatic Cylinder",
         p3: "All types of blow molds : PET / PP / HDPE",
         p4: "Other injection Molds with slides",
