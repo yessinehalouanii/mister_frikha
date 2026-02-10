@@ -31,7 +31,6 @@ export default function Navbar() {
             [nav.about, "#about"],
             [nav.equipment, "#equipment"], // ✅ NEW
             [nav.products, "#products"],
-            [nav.clients, "#clients"], // ✅ NEW
             [nav.why, "#why"], // ✅ NEW
             [nav.contact, "#contact"],
           ].map(([label, href]) => (
