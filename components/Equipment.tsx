@@ -26,10 +26,10 @@ export default function Equipment() {
     <section className="mx-auto max-w-7xl px-6 py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm font-black text-brand-500 uppercase">
+          <p className="text-xl font-black text-brand-500 uppercase">
             {equipment.badge}
           </p>
-          <h2 className="mt-2 text-3xl font-extrabold text-steel-900">
+          <h2 className="mt-2 text-2xl font-extrabold text-steel-900">
             {equipment.title}
           </h2>
           <p className="mt-2 text-steel-500 max-w-2xl">

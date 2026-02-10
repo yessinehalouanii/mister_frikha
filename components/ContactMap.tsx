@@ -64,8 +64,14 @@ export default function ContactMap() {
     {
       icon: Phone,
       title: c.phone || 'Phone',
-      content: '+216 24 731 500\n+216 24 731 700 | +216 28 831 700',
-      link: 'tel:+21624731500'
+      content: '+216 74 123 456',
+      link: 'tel:+21674123456'
+    },
+    {
+      icon: Phone,
+      title: 'WhatsApp',
+      content: '+216 28 831 700',
+      link: 'https://wa.me/21628831700'
     },
     {
       icon: Mail,
@@ -77,8 +83,8 @@ export default function ContactMap() {
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-14">
-      <h2 className="text-3xl font-extrabold">{c.title}</h2>
-      <p className="mt-2 text-steel-500 max-w-2xl">{c.desc}</p>
+      <h2 className="text-xl font-black text-brand-500 uppercase">{c.title}</h2>
+      <p className="mt-2 text-2xl font-extrabold text-steel-900">{c.desc}</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 items-start">
         {/* ✅ Contact Info Card - Simple & Elegant */}

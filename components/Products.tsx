@@ -35,7 +35,7 @@ export default function Products() {
     <section className="mx-auto max-w-7xl px-6 py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-extrabold">{products.title}</h2>
+          <h2 className="text-xl font-black text-brand-500 uppercase">{products.title}</h2>
         </div>
       </div>
 

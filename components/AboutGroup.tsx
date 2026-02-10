@@ -20,11 +20,11 @@ export default function AboutGroup() {
 
         {/* Right text */}
         <div className="flex flex-col justify-center">
-          <p className="text-sm font-semibold text-brand-500 uppercase">
+          <p className="text-xl font-black text-brand-500 uppercase">
             {about.badge}
           </p>
 
-          <h2 className="mt-2 text-4xl font-extrabold text-steel-900">
+          <h2 className="mt-2 text-2xl font-extrabold text-steel-900">
             {about.title}
           </h2>
 

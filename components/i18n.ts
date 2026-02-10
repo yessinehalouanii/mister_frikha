@@ -18,9 +18,9 @@ export const translations = {
       title1: "Design & Manufacturing of Plastic Injection Molds",
       title2: "From idea to final part",
       desc:
-        "We support clients with product development, mold making, injection molding, and reliable industrial production — built for precision, quality, and on-time delivery.",
+        "We support clients with product development, Molds making, injection molding, and reliable industrial production — built for precision, quality, and on-time delivery.",
       contactCta: "Contact Us",
-      trust1: "Tooling & Mold Fabrication",
+      trust1: "Tooling & Molds Fabrication",
       trust2: "Plastic Injection Production",
       trust3: "Quality Control & Delivery",
       cardTitle: "Mechanical Industrial Company",
@@ -34,19 +34,19 @@ export const translations = {
       title: "Industrial Molds & Plastic Injection Expertise",
       desc:
         "We design and manufacture precision molds and plastic parts with strong focus on quality, cost control, and on-time delivery.",
-      b1: "Decades of mold design expertise",
+      b1: "Decades of Molds design expertise",
       b2: "In-house tooling & fabrication",
     },
     equipment: {
       badge: "Equipment & Machinery",
       title: "Modern Capacity for Tooling & Production",
       desc:
-        "From mold fabrication to injection production and quality control — everything is organized for precision, speed, and reliability.",
+        "From Molds fabrication to injection production and quality control — everything is organized for precision, speed, and reliability.",
       items: {
-        cnc1_name: "CNC Machine",
-        cnc1_sub: "High precision / stable cycles",
+        cnc1_name: "CNC Machine (Pro-1000)",
+        cnc1_sub: "High precision: Large part",
         cnc2_name: "CNC Machine (LG-800)",
-        cnc2_sub: "Repeatable inspections",
+        cnc2_sub: "High precision: Medium part",
       },
     },
     products: {
@@ -57,14 +57,14 @@ export const translations = {
         p1: "Unscrewing Mold",
         p2: "Molds with Hydraulic or Pneumatic Cylinder",
         p3: "All types of blow molds : PET / PP / HDPE",
-        p4: "Other injection mold with slides",
+        p4: "Other injection Molds with slides",
       },
     },
     clients: {
       badge: "Our Clients",
       title: "Trusted by Industrial Partners",
       desc:
-        "We work closely with manufacturers, OEMs, and brands who require precision molds, reliable injection production, and consistent quality.",
+        "We work closely with manufacturers, OEMs, and brands who require precision Molds, reliable injection production, and consistent quality.",
       logos: {
         c1: "Automotive Partner",
         c2: "Industrial Supplier",
@@ -82,7 +82,9 @@ export const translations = {
       q2_t: "On-Time Delivery",
       q2_d: "Clear planning + reliable production.",
       q3_t: "Full Support",
-      q3_d: "From design to mold and mass production.",
+      q3_d: "From design to Molds and mass production.",
+      q4_t: "Global Distribution",
+      q4_d: "Available for global and offshore distribution.",
     },
     contact: {
       title: "Contact",
@@ -116,10 +118,9 @@ export const translations = {
       why: "Pourquoi",
       contact: "Contact",
       cta: "Démarrer une coopération",
-      brand: "Société industrielle mécanique",
+      brand: "Société Industrielle Mécanique",
     },
     hero: {
-      badge: "SIM • Industrie",
       title1: "Conception, Moules & Injection Plastique",
       title2: "De l’idée à la pièce finale",
       desc:
@@ -128,11 +129,11 @@ export const translations = {
       trust1: "Outillage & Fabrication de moules",
       trust2: "Production par injection plastique",
       trust3: "Contrôle qualité & Livraison",
-      cardTitle: "Société industrielle mécanique",
+      cardTitle: "Société Industrielle Mécanique",
       cardSub: "Qualité • Précision • Délais",
       yearsLabel: "Ans",
       prodLabel: "Production",
-      prodValue: "élevée",
+      prodValue: "Élevée",
     },
     about: {
       badge: "À propos de SIM",
@@ -148,19 +149,19 @@ export const translations = {
       desc:
         "De la fabrication des moules à la production par injection et au contrôle qualité — tout est organisé pour la précision, la rapidité et la fiabilité.",
       items: {
-        cnc1_name: "Machine CNC",
-        cnc1_sub: "Haute précision / cycles stables",
+        cnc1_name: "Machine CNC (Pro-1000)",
+        cnc1_sub: "Haute précision : Grande Pièce",
         cnc2_name: "Machine CNC (LG-800)",
-        cnc2_sub: "Contrôles répétables",
+        cnc2_sub: "Haute précision : Moyenne Pièce",
       },
     },
     products: {
       title: "Produits",
-      desc: "Moule → Produit (côte à côte).",
-      mold: "Moule",
+      desc: "Moules → Produit (côte à côte).",
+      mold: "Moules",
       product: "Produit",
       items: {
-        p1: "Moule à dévissage",
+        p1: "Moules à dévissage",
         p2: "Moules avec vérin hydraulique ou pneumatique",
         p3: "Tous types de moules de soufflage : PET / PP / HDPE",
         p4: "Autres moules d’injection avec coulisseaux",
@@ -188,7 +189,9 @@ export const translations = {
       q2_t: "Délais respectés",
       q2_d: "Planification claire + production fiable.",
       q3_t: "Accompagnement complet",
-      q3_d: "De la conception au moule et à la série.",
+      q3_d: "De la conception au moules et à la série.",
+      q4_t: "Distribution mondiale",
+      q4_d: "Disponible pour la distribution mondiale et offshore.",
     },
     contact: {
       title: "Contact",
@@ -207,7 +210,7 @@ export const translations = {
       address: "Gremda Km 10, Sfax, Tunisie",
     },
     footer: {
-      rights: "© {year} Société industrielle mécanique. Tous droits réservés.",
+      rights: "© {year} Société Industrielle Mécanique. Tous droits réservés.",
       contact: "Contact",
       catalog: "Catalogue",
     },
