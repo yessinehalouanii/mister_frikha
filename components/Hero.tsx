@@ -96,7 +96,6 @@ export default function Hero() {
                   height={80}
                   className="object-contain rounded"
                 />
-                <div className="absolute -right-2 -top-2 rounded-full bg-brand-500 px-2 py-0.5 text-xs font-semibold text-white">SIM</div>
               </div>
 
               <div className="flex-1">
@@ -106,17 +105,17 @@ export default function Hero() {
                 <div className="mt-3 flex items-center gap-3 text-xs text-steel-400">
                   <div className="flex items-center gap-1">
                     <ShieldCheck className="h-4 w-4 text-brand-500" />
-                    <span>Qualité</span>
+                    <span>{hero.feature1}</span>
                   </div>
                   <span>•</span>
                   <div className="flex items-center gap-1">
                     <Target className="h-4 w-4 text-brand-500" />
-                    <span>Précision</span>
+                    <span>{hero.feature2}</span>
                   </div>
                   <span>•</span>
                   <div className="flex items-center gap-1">
                     <Clock className="h-4 w-4 text-brand-500" />
-                    <span>Délais</span>
+                    <span>{hero.feature3}</span>
                   </div>
                 </div>
               </div>
@@ -130,7 +129,6 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold">{hero.yearsLabel}</div>
-                  <div className="text-xs text-steel-400">Expérience</div>
                 </div>
               </div>
 
@@ -140,7 +138,6 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold">{hero.prodLabel}</div>
-                  <div className="text-xs text-steel-400">Capacité</div>
                 </div>
               </div>
             </div>
