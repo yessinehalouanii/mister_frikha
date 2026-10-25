@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import type { Locale } from "@/i18n/routing";
 import type { Dict } from "@/content";
+import { site } from "@/lib/site";
 import {
   ACCEPT_ATTR,
   checkFiles,
@@ -62,25 +63,45 @@ export function QuoteForm({ c, locale }: { c: Copy; locale: Locale }) {
       return;
     }
 
-    data.delete("files");
-    files.forEach((f) => data.append("files", f, f.name));
-    data.set("locale", locale);
+    // FormSubmit turns these fields into the email sent to contact@simfrikha.com.
+    const q = parsed.data!;
+    const moldLabel = c.moldTypes.find((t) => t.value === q.moldType)?.label ?? "";
+    const mail = new FormData();
+    mail.set("_subject", `Demande de devis – ${q.name}${q.company ? ` (${q.company})` : ""}`);
+    mail.set("_template", "table");
+    mail.set("_captcha", "false");
+    mail.set("_honey", String(data.get("_honey") ?? ""));
+    if (q.email) mail.set("_replyto", q.email);
+    const rows: [string, string | undefined][] = [
+      ["Nom", q.name],
+      ["Société", q.company],
+      ["Téléphone", q.phone],
+      ["E-mail", q.email],
+      ["Type de moule", moldLabel],
+      ["Matière", q.material],
+      ["Volume annuel", q.volume],
+      ["Projet", q.message],
+      ["Langue du site", locale],
+    ];
+    rows.forEach(([k, v]) => v && mail.set(k, v));
+    files.forEach((f) => mail.append("attachment", f, f.name));
 
     setStatus("sending");
     try {
-      const res = await fetch("/api/quote", { method: "POST", body: data });
-      const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: QuoteErrorCode; fields?: Errors };
-      if (res.ok && json.ok) {
+      const res = await fetch(site.formEndpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: mail,
+      });
+      const json = (await res.json().catch(() => ({}))) as { success?: string | boolean; message?: string };
+      if (res.ok && String(json.success) === "true") {
         setStatus("ok");
         form.reset();
         setFiles([]);
         return;
       }
-      if (json.fields && Object.keys(json.fields).length) {
-        setErrors(json.fields);
-        focusFirstError(json.fields);
-      }
-      setFormError(json.error ?? "server");
+      if (json.message) console.warn("Quote form:", json.message);
+      setFormError(res.status === 429 ? "rate" : "server");
       setStatus("error");
     } catch {
       setFormError("server");
@@ -104,7 +125,7 @@ export function QuoteForm({ c, locale }: { c: Copy; locale: Locale }) {
       <div aria-hidden="true" className="absolute -start-[9999px] h-px w-px overflow-hidden">
         <label>
           Website
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
 

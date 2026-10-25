@@ -1,7 +1,7 @@
 # simfrikha.com — SIM, mold maker in Sfax
 
 Website of **SIM (Société Industrielle Mécanique)**: plastic injection and blow molds, Sfax, Tunisia.
-Next.js 16 (App Router), React 19, Tailwind CSS 4, next-intl, Resend. Deployed on Vercel: **a push to `main` goes live.**
+Next.js 16 (App Router), React 19, Tailwind CSS 4, next-intl, FormSubmit for the quote form. Deployed on Vercel: **a push to `main` goes live.**
 
 ## Run it
 
@@ -14,16 +14,11 @@ npm run lint
 
 ## Environment variables
 
-Set them in Vercel → Project → Settings → Environment Variables (and in `.env.local` for local work).
-
 | Variable | Required | What it does |
 | --- | --- | --- |
-| `RESEND_API_KEY` | yes | API key from resend.com, used by the quote form (`app/api/quote/route.ts`). |
-| `CONTACT_TO_EMAIL` | yes | Where quote requests are delivered, e.g. `contact@simfrikha.com`. |
-| `CONTACT_FROM_EMAIL` | yes | Sender address on a domain verified in Resend, e.g. `devis@simfrikha.com`. |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | no | The `content` value of the Google Search Console HTML-tag verification. Adds `<meta name="google-site-verification">`. |
 
-Without the three Resend variables the form still validates, but sending shows a localized error that invites the visitor to call or use WhatsApp.
+The quote form needs no keys: see "Quote form" below.
 
 ## Languages and URLs
 
@@ -49,15 +44,16 @@ Without the three Resend variables the form still validates, but sending shows a
 | Page copy, per language | `content/fr.ts`, `content/en.ts`, `content/ar.ts` |
 | Photos | `public/images/*.webp` and the map in `lib/images.ts` |
 | SEO helpers and JSON-LD | `lib/seo.ts` |
-| Quote form validation (client and server) | `lib/quote.ts` |
+| Quote form validation and the FormSubmit address | `lib/quote.ts`, `lib/site.ts` |
 | Share images | `lib/og.tsx`; the Arabic card is pre-rendered from `scripts/og-ar.html` into `assets/og/og-ar.png` |
 | Logo | `public/logo-sim.svg`, `components/Logo.tsx`, `app/icon.svg`; original in `assets/brand/` |
 
 ## Quote form
 
-- Fields are validated with zod on both the client and the server, and all user input is HTML-escaped in the email.
-- A honeypot field catches bots, and there's a rate limit of 5 requests per IP per 10 minutes, per server instance.
-- Attachments: STEP, IGES, STL, DWG, DXF, PDF or images, **4 MB in total**. Vercel functions reject request bodies over 4.5 MB, so larger files go by WhatsApp or email; the form says so.
+- Requests are sent from the browser to [FormSubmit](https://formsubmit.co), which emails them to **contact@simfrikha.com** (the address is `site.formEndpoint` in `lib/site.ts`).
+- **One-time activation:** the first submission makes FormSubmit send an "Activate form" email to contact@simfrikha.com. Click the link once. Until then, submissions are not delivered.
+- Validation runs with zod before anything is sent (`lib/quote.ts`), with localized errors in fr/en/ar. FormSubmit's honeypot (`_honey`) and spam filter handle bots, and replying to the email answers the visitor (`_replyto`).
+- Attachments: STEP, IGES, STL, DWG, DXF, PDF or images, **4 MB in total**. The form points visitors to WhatsApp or email for larger files.
 
 ## Adding photos
 

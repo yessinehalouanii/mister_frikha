@@ -13,6 +13,9 @@ export const site = {
   phoneHref: "tel:+21624731010",
   whatsappHref: "https://wa.me/21624731010",
   email: "contact@simfrikha.com",
+  // Quote requests are relayed to the email above by FormSubmit (formsubmit.co).
+  // The very first submission sends an activation link to that inbox; click it once.
+  formEndpoint: "https://formsubmit.co/ajax/contact@simfrikha.com",
   address: {
     street: "Gremda Km 10",
     city: "Sfax",

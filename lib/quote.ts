@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { locales } from "@/i18n/routing";
 
-// Vercel functions reject request bodies over 4.5 MB, so attachments stay under 4 MB in total.
+// Attachments stay under 4 MB in total so the email relay accepts them.
 export const MAX_FILES_BYTES = 4 * 1024 * 1024;
 export const MAX_FILES = 6;
 export const ACCEPTED_EXTENSIONS = [
