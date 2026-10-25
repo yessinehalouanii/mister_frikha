@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T12:00:00Z",
+  "title": "Design System: SIM (simfrikha.com)",
+  "extensions": {
+    "colorMeta": {
+      "blue": { "role": "primary", "displayName": "SIM Blue", "canonical": "#2f67ba", "tonalRamp": ["#0f223d", "#1a3866", "#244f8e", "#2e65b7", "#5487d4", "#85aae0", "#b6ccec", "#ebf1fa"] },
+      "blue-press": { "role": "primary", "displayName": "Pressed Blue", "canonical": "#24528f", "tonalRamp": ["#0f233d", "#1a3a66", "#24528f", "#2e69b7", "#548bd4", "#85ace0", "#b6cded", "#ebf1fa"] },
+      "blue-hi": { "role": "primary", "displayName": "Signal Blue", "canonical": "#8ab0ea", "tonalRamp": ["#0c2141", "#13376c", "#1b4c97", "#2362c3", "#4984de", "#7da7e8", "#b1caf1", "#e9f0fb"] },
+      "blue-deep": { "role": "primary", "displayName": "Deep Blue", "canonical": "#102a4d", "tonalRamp": ["#0d233f", "#163a6a", "#1f5194", "#2768be", "#4e8ada", "#80abe5", "#b3cdef", "#eaf1fb"] },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#121519", "tonalRamp": ["#20252c", "#353e4a", "#4b5768", "#607085", "#8291a5", "#a6b1bf", "#cad0d9", "#f0f2f4"] },
+      "steel": { "role": "neutral", "displayName": "Steel", "canonical": "#1b2026", "tonalRamp": ["#20262d", "#353f4b", "#4a5868", "#5f7186", "#8292a6", "#a6b1bf", "#c9d0d9", "#f0f2f4"] },
+      "steel-2": { "role": "neutral", "displayName": "Steel 2", "canonical": "#262c34", "tonalRamp": ["#20252c", "#363e4a", "#4b5767", "#617085", "#8392a5", "#a7b1be", "#cad0d8", "#f0f2f4"] },
+      "ink": { "role": "neutral", "displayName": "Steel Ink", "canonical": "#eef1f4", "tonalRamp": ["#1e262e", "#32404d", "#46596c", "#5a738b", "#7d94ab", "#a2b2c3", "#c7d1db", "#f0f2f5"] },
+      "muted": { "role": "neutral", "displayName": "Muted Steel", "canonical": "#a3acb8", "tonalRamp": ["#21262b", "#383f48", "#4e5865", "#647182", "#8692a2", "#a9b1bc", "#cbd0d7", "#f1f2f4"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#eef1f4", "tonalRamp": ["#1e262e", "#32404d", "#46596c", "#5a738b", "#7d94ab", "#a2b2c3", "#c7d1db", "#f0f2f5"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper 2", "canonical": "#e1e5ea", "tonalRamp": ["#20262d", "#353f4b", "#4a5869", "#5f7187", "#8192a7", "#a5b1c0", "#c9d0d9", "#f0f2f4"] },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#4a525c", "tonalRamp": ["#22262a", "#393f47", "#505863", "#66717f", "#8893a0", "#aab2bb", "#ccd1d6", "#f1f2f4"] },
+      "error": { "role": "neutral", "displayName": "Error Salmon", "canonical": "#f08a8a", "tonalRamp": ["#440909", "#710e0e", "#9e1414", "#cb1a1a", "#e74141", "#ee7777", "#f5aeae", "#fce8e8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Uppercase condensed: page H1, T0 band, process heading, footer close only. In Arabic: 100% width, no uppercase, no tracking, line-height 1.2." },
+      "headline": { "displayName": "Headline", "purpose": "Sentence-case condensed section headings (H2)." },
+      "title": { "displayName": "Title", "purpose": "Catalogue row names, process steps, mobile menu items." },
+      "lead": { "displayName": "Lead", "purpose": "Hero and band lead sentences, FAQ questions." },
+      "body": { "displayName": "Body", "purpose": "Running text at 46-62ch; line-height 1.8 in Arabic." },
+      "label": { "displayName": "Label", "purpose": "Nav, captions, table row labels, field labels. Never uppercase or tracked." },
+      "figure": { "displayName": "Figure (mono)", "purpose": "Spec figures and dimensions only, tabular, isolated LTR." }
+    },
+    "shadows": [
+      { "name": "none", "value": "none", "purpose": "The system is flat; no drop shadows." },
+      { "name": "stroke", "value": "inset 0 0 0 1px rgb(214 222 232 / 0.28)", "purpose": "Quiet button and form field stroke on dark (not elevation)." },
+      { "name": "stroke-focus", "value": "inset 0 0 0 2px #8ab0ea", "purpose": "Form field focus stroke." },
+      { "name": "hairline", "value": "0 1px 0 rgb(214 222 232 / 0.13)", "purpose": "Table, catalogue, list and FAQ row rules." },
+      { "name": "hairline-paper", "value": "0 -1px 0 rgb(18 21 25 / 0.14)", "purpose": "Row rules on paper bands." }
+    ],
+    "motion": [
+      { "name": "ease-out-quick", "value": "160ms ease-out", "purpose": "Button colour and stroke transitions, arrow nudge." },
+      { "name": "ease-standard", "value": "cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "Movement: button press, FAQ chevron (200ms), photo zoom (600ms, scale 1.03)." },
+      { "name": "reveal-up", "value": "opacity 0 to 1, translateY 24px to 0, view() timeline, entry 0-55%", "purpose": "Scroll-driven entrances, staggered +8% per step; skipped without support or under reduced motion." },
+      { "name": "swap", "value": "7s cubic-bezier(0.65, 0, 0.35, 1) infinite", "purpose": "Mold-to-part crossfade inside the process heading; static side by side under reduced motion." },
+      { "name": "intro", "value": "560ms ring draw, 300ms fill, 380ms exit at 0.87s, cubic-bezier(0.7, 0, 0.3, 1)", "purpose": "Logo intro once per browser session; off under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The quote action: square SIM Blue fill, arrow mirrors in RTL.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Demander un devis <svg class=\"ds-arrow\" viewBox=\"0 0 20 20\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans, Archivo, sans-serif); font-weight: 600; font-size: 1.0625rem; line-height: 1.2; text-decoration: none; border: 0; border-radius: 0; transition: background-color 160ms ease-out, box-shadow 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #8ab0ea; outline-offset: 3px; } .ds-btn-primary { background: #2f67ba; color: #fff; } .ds-btn-primary:hover { background: #24528f; } .ds-arrow { transition: transform 160ms ease-out; } .ds-btn:hover .ds-arrow { transform: translateX(3px); }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary contact action (WhatsApp, phone): 1px inset stroke, no fill.",
+      "html": "<div style=\"background:#121519;padding:24px\"><a class=\"ds-btn-quiet\" href=\"#\">WhatsApp <span dir=\"ltr\">24 731 010</span></a></div>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans, Archivo, sans-serif); font-weight: 600; font-size: 1.0625rem; color: #eef1f4; text-decoration: none; border-radius: 0; box-shadow: inset 0 0 0 1px rgb(214 222 232 / 0.28); transition: box-shadow 160ms ease-out; } .ds-btn-quiet:hover { box-shadow: inset 0 0 0 1px #eef1f4; } .ds-btn-quiet:focus-visible { outline: 2px solid #8ab0ea; outline-offset: 3px; }"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Primary action on the SIM Blue T0 band only.",
+      "html": "<div style=\"background:#2f67ba;padding:24px\"><a class=\"ds-btn-light\" href=\"#\">Demander un devis</a></div>",
+      "css": ".ds-btn-light { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.4rem; font-family: var(--font-sans, Archivo, sans-serif); font-weight: 600; font-size: 1.0625rem; background: #fff; color: #121519; text-decoration: none; border-radius: 0; transition: background-color 160ms ease-out; } .ds-btn-light:hover { background: #e1e5ea; } .ds-btn-light:focus-visible { outline: 2px solid #8ab0ea; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Steel-filled square field with inset stroke; Signal Blue 2px on focus, salmon on error.",
+      "html": "<div style=\"background:#121519;padding:24px;color:#eef1f4\"><label class=\"ds-label\" for=\"ds-f\">Nom <span class=\"ds-req\">(requis)</span></label><input id=\"ds-f\" class=\"ds-input\" placeholder=\"Votre nom\"></div>",
+      "css": ".ds-label { font-family: var(--font-sans, Archivo, sans-serif); font-size: 0.875rem; font-weight: 600; } .ds-req { font-weight: 400; color: #8ab0ea; } .ds-input { display: block; width: 100%; margin-top: 8px; padding: 12px 16px; background: #1b2026; color: #eef1f4; font: inherit; font-size: 1.0625rem; border: 0; border-radius: 0; box-shadow: inset 0 0 0 1px rgb(214 222 232 / 0.28); transition: box-shadow 160ms ease-out; } .ds-input::placeholder { color: rgb(163 172 184 / 0.8); } .ds-input:hover { box-shadow: inset 0 0 0 1px #a3acb8; } .ds-input:focus, .ds-input:focus-visible { outline: none; box-shadow: inset 0 0 0 2px #8ab0ea; } .ds-input[aria-invalid=true] { box-shadow: inset 0 0 0 2px #f08a8a; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky 72px graphite bar: logo, label-size links (muted, ink when current), language switch, quote button.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-brand\">SIM</span><nav><a href=\"#\" aria-current=\"page\">Moules d'injection</a><a href=\"#\">Moules de soufflage</a><a href=\"#\">Bureau d'études</a></nav><span class=\"ds-nav-lang\"><b>FR</b> EN عربي</span><a class=\"ds-nav-cta\" href=\"#\">Devis</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; height: 72px; padding-inline: clamp(20px, 3.2vw, 48px); background: rgb(18 21 25 / 0.95); color: #eef1f4; font-family: var(--font-sans, Archivo, sans-serif); } .ds-nav-brand { font-weight: 700; font-size: 1.125rem; letter-spacing: 0.025em; } .ds-nav nav { display: flex; gap: 28px; margin-inline-start: auto; } .ds-nav nav a { font-size: 0.875rem; color: #a3acb8; text-decoration: none; transition: color 160ms ease-out; } .ds-nav nav a:hover, .ds-nav nav a[aria-current=page] { color: #eef1f4; } .ds-nav nav a:focus-visible { outline: 2px solid #8ab0ea; outline-offset: 3px; } .ds-nav-lang { font-size: 0.875rem; color: #a3acb8; } .ds-nav-lang b { color: #eef1f4; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.4rem; background: #2f67ba; color: #fff; font-weight: 600; text-decoration: none; } .ds-nav-cta:hover { background: #24528f; }"
+    },
+    {
+      "name": "Datasheet Strip",
+      "kind": "custom",
+      "refersTo": "datasheet-cell",
+      "description": "Steel band of mono figures over muted labels, divided by inset hairlines.",
+      "html": "<dl class=\"ds-strip\"><div><dt>Taille max. du moule</dt><dd>1150 × 600</dd></div><div><dt>Presse d'essai</dt><dd>180 t</dd></div><div><dt>Moules par an</dt><dd>36+</dd></div></dl>",
+      "css": ".ds-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; background: #1b2026; color: #eef1f4; font-family: var(--font-sans, Archivo, sans-serif); } .ds-strip div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 4px; padding: 24px clamp(20px, 3.2vw, 48px); box-shadow: inset -1px -1px 0 rgb(214 222 232 / 0.13); } .ds-strip dt { font-size: 0.875rem; color: #a3acb8; } .ds-strip dd { margin: 0; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem); line-height: 1; direction: ltr; unicode-bidi: isolate; }"
+    },
+    {
+      "name": "Dimensioned Photo",
+      "kind": "custom",
+      "refersTo": "callout-balloon",
+      "description": "Photo framed by dimension lines with a mono label, plus numbered drawing balloons.",
+      "html": "<figure class=\"ds-dim\"><div class=\"ds-dim-h\"><span>1150 mm</span></div><div class=\"ds-dim-well\"><span class=\"ds-balloon\" style=\"left:60%;top:30%\">1</span><span class=\"ds-balloon\" style=\"left:40%;top:70%\">2</span></div></figure>",
+      "css": ".ds-dim { position: relative; margin: 34px 0 0; } .ds-dim-h { position: absolute; inset-inline: 0; top: -34px; height: 20px; color: #a3acb8; border-inline: 1px solid currentColor; } .ds-dim-h::before { content: ''; position: absolute; inset-inline: 0; top: 10px; border-top: 1px solid currentColor; } .ds-dim-h span { position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; padding-inline: 10px; background: #121519; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.8125rem; line-height: 20px; white-space: nowrap; } .ds-dim-well { position: relative; aspect-ratio: 3 / 2; background: #e1e5ea; } .ds-balloon { position: absolute; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; transform: translate(-50%, -50%); border-radius: 9999px; background: #121519; color: #eef1f4; box-shadow: 0 0 0 1px rgb(255 255 255 / 0.7); font-family: var(--font-mono, 'JetBrains Mono', monospace); font-weight: 500; font-size: 0.875rem; }"
+    },
+    {
+      "name": "Catalogue Row",
+      "kind": "card",
+      "refersTo": "catalogue-row",
+      "description": "Hairline-topped mold-family row: mono reference, condensed title, text, Signal Blue link.",
+      "html": "<div style=\"background:#121519;padding:24px\"><div class=\"ds-row\"><p class=\"ds-ref\">SIM-INJ-02</p><div><h3 class=\"ds-row-title\">Moules à dévissage</h3><p class=\"ds-row-text\">Pour bouchons et pièces filetées.</p><a class=\"ds-row-link\" href=\"#\">En savoir plus →</a></div></div></div>",
+      "css": ".ds-row { display: grid; grid-template-columns: 1fr 4fr; gap: 32px; padding-block: 40px; box-shadow: 0 -1px 0 rgb(214 222 232 / 0.13); color: #eef1f4; font-family: var(--font-sans, Archivo, sans-serif); } .ds-ref { margin: 4px 0 0; font-family: var(--font-mono, 'JetBrains Mono', monospace); font-weight: 500; font-size: 0.875rem; color: #a3acb8; } .ds-row-title { margin: 0; font-weight: 700; font-stretch: 85%; letter-spacing: -0.015em; font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem); line-height: 1.2; } .ds-row-text { margin: 12px 0 0; max-width: 46ch; font-size: 1.0625rem; line-height: 1.6; } .ds-row-link { display: inline-flex; margin-top: 20px; font-weight: 600; color: #8ab0ea; text-decoration: none; transition: color 160ms ease-out; } .ds-row-link:hover { color: #eef1f4; } .ds-row-link:focus-visible { outline: 2px solid #8ab0ea; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Toolmaker's Datasheet",
+    "overview": "SIM speaks the way a standard-components catalogue speaks: reference codes per mold type, spec tables, numbered callouts on a photo, dimension lines around the part, figures in a monospaced face. The site is that catalogue, set on a graphite ground with steel panels, one blue accent and square, flat surfaces. Proof comes from measured photographs and figures, never from decoration.\n\nDensity is a working document's density: long pages in a 12-column grid, generous section padding, prose held to a short measure, and figures large enough to read from across a workshop. Long pages alternate graphite and pale steel \"paper\" bands, so the read has a dark/light rhythm while graphite stays the page ground. Motion is restrained: scroll-driven entrances, a slow mold-to-part crossfade inside one heading, a once-per-session logo draw, all removed under reduced motion.\n\nThe system is trilingual (French first, English, Arabic RTL). Every direction-sensitive rule is written with logical properties, and Arabic gets its own type behaviour rather than an imitation of the Latin display.",
+    "keyCharacteristics": [
+      "Graphite ground, steel panel step, steel ink; SIM blue is the only accent.",
+      "Archivo variable width: condensed uppercase for display, condensed sentence case for section titles.",
+      "JetBrains Mono for spec figures and dimensions only.",
+      "Square corners, flat fills, no drop shadows; depth is tonal.",
+      "Drawing grid and dimension lines as the datasheet signature, confined to hero and datasheet bands.",
+      "Logical properties throughout; Arabic in IBM Plex Sans Arabic, never uppercased or condensed."
+    ],
+    "rules": [
+      { "name": "The One Blue Rule", "body": "SIM Blue (#2F67BA) appears only on actions, the T0 offer band (and the T0 step that names it) and active/selected states. It never colours a heading, an icon or a decorative figure. Signal Blue is its on-dark reading of the same rule, not a second accent.", "section": "colors" },
+      { "name": "The Graphite Ground Rule", "body": "Every page starts and ends on graphite. Paper bands are interludes inside it; a page never opens on paper.", "section": "colors" },
+      { "name": "The Two-Tier Heading Rule", "body": "Uppercase condensed display is reserved for the page title, the T0 band, the process heading and the footer close. Every other heading is sentence-case condensed title, so long technical headings stay readable.", "section": "typography" },
+      { "name": "The Measured Figure Rule", "body": "Monospace is used only for spec figures and dimensions (sizes, tonnages, grades, codes, counts). Prose, names, buttons and contact details stay in Archivo.", "section": "typography" },
+      { "name": "The Arabic Own-Voice Rule", "body": "In Arabic, display and title lose condensing, uppercase and tracking (font-stretch: 100%, text-transform: none, letter-spacing: 0, weight 700, line-height 1.2), and body line-height rises to 1.8. Arabic is set in IBM Plex Sans Arabic (400/500/700), never in a stretched Latin face.", "section": "typography" },
+      { "name": "The Logical Direction Rule", "body": "Every directional value uses logical properties (ms-, me-, ps-, pe-, start, end, inset-inline, inset-block, text-start). Arrows that imply direction mirror in RTL (scaleX(-1)); the floating WhatsApp button sits at the bottom end corner. Phone numbers, emails and file names are wrapped dir=\"ltr\". A physical left/right is allowed only where it is centring geometry, not reading direction.", "section": "layout" },
+      { "name": "The Drawing Grid Rule", "body": "The 48px drawing grid (1px lines in --line) appears only behind page heroes and datasheet bands (the spec sheet). It is the background of a drawing, not a texture for any surface.", "section": "layout" },
+      { "name": "The Flat Steel Rule", "body": "Surfaces never lift. If something needs to stand apart, give it the next tonal step (graphite to steel to steel-2) or a 1px stroke.", "section": "elevation" },
+      { "name": "The Hairline Rule", "body": "1px rules appear in tables, catalogue and list rows, the FAQ list and as form-field strokes, and as the strokes of dimension lines and the drawing grid. Process steps use heavier top rules (2px at 15% graphite, 4px SIM Blue for T0). Rules are never boxes around content.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep SIM Blue (#2F67BA) to actions, the T0 offer band and active states; use Signal Blue (#8AB0EA) for the same roles on graphite.",
+      "Do set every number that is a measurement, grade, code or count in the mono figure style, isolated LTR.",
+      "Do use uppercase condensed display only for the page title, the T0 band, the process heading and the footer close; use sentence-case condensed titles for everything else.",
+      "Do write every directional rule with logical properties and mirror directional arrows in RTL.",
+      "Do set Arabic in IBM Plex Sans Arabic at 100% width, no uppercase, no tracking, body line-height 1.8.",
+      "Do give photos a fixed-ratio well with a fill colour, and contain product parts on white.",
+      "Do separate surfaces by tonal step (graphite, steel, steel-2, paper), not by elevation."
+    ],
+    "donts": [
+      "Don't round corners on buttons, fields, panels or images; circles are for drawing balloons and the logo only.",
+      "Don't add drop shadows or glows; box-shadow is for inset strokes and hairlines only.",
+      "Don't use the drawing grid outside page heroes and datasheet bands.",
+      "Don't use 1px rules as boxes or decoration; they belong to tables, catalogue and list rows, the FAQ list and form fields.",
+      "Don't use monospace for prose, names, buttons or contact details.",
+      "Don't add uppercase letter-spaced labels or eyebrow text above headings.",
+      "Don't uppercase, condense or track Arabic text."
+    ]
+  }
+}
