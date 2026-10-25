@@ -1,0 +1,46 @@
+<!doctype html>
+<!--
+  Source of assets/og/og-ar.png (the Arabic share image). next/og cannot lay out Arabic,
+  so this card is rendered in a real browser at 1200×630:
+    open this file through any local server, screenshot the viewport at 1200×630,
+    save as assets/og/og-ar.png.
+-->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,800&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 64px 72px; color: #EEF1F4; font-family: "IBM Plex Sans Arabic", sans-serif;
+    background: #121519;
+    background-image: linear-gradient(rgba(214,222,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(214,222,232,.10) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .brand { display: flex; align-items: center; gap: 20px; direction: ltr; }
+  .brand img { width: 84px; height: 84px; border-radius: 50%; background: #fff; }
+  .brand b { font: 800 40px "Archivo"; font-stretch: 75%; }
+  h1 { font-weight: 700; font-size: 92px; line-height: 1.2; }
+  .t0 { margin-top: 24px; font-size: 30px; color: #8AB0EA; font-weight: 700; }
+  .figs { display: flex; gap: 56px; }
+  .figs b { display: block; font: 800 44px "Archivo"; font-stretch: 75%; direction: ltr; text-align: right; }
+  .figs span { font-size: 22px; color: #A3ACB8; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="brand"><img src="../public/logo-sim.svg" alt=""><b>SIM</b></div>
+  <div>
+    <h1>صناعة القوالب<br>في صفاقس</h1>
+    <p class="t0">تجربة T0 مجانية</p>
+  </div>
+  <div class="figs">
+    <div><b>2000</b><span>سنة التأسيس في صفاقس</span></div>
+    <div><b>15</b><span>صانع قوالب مؤهل</span></div>
+    <div><b>1150×600</b><span>أقصى مقاس للقالب (مم)</span></div>
+  </div>
+</body>
+</html>
