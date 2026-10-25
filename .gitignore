@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design tooling
+/.taste-skill/
+/.playwright-cli/
+/.impeccable/review/
+/.impeccable/mocks/
+/.impeccable/questions/
