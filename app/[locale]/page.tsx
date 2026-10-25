@@ -36,6 +36,7 @@ export default async function HomePage({ params }: Props) {
         d={d}
         h1={h.h1}
         lead={h.lead}
+        split
         media={
           <DimensionedPhoto
             k="moldUnscrewing"
@@ -46,12 +47,13 @@ export default async function HomePage({ params }: Props) {
               labels: h.heroCallouts,
               legend: h.heroCalloutsLabel,
               points: [
-                { x: 67, y: 20 },
-                { x: 42, y: 33 },
-                { x: 62, y: 47 },
-                { x: 47, y: 80 },
+                { x: 70, y: 26, bx: 90, by: 9 },
+                { x: 42, y: 33, bx: 22, by: 14 },
+                { x: 63, y: 46, bx: 89, by: 56 },
+                { x: 50, y: 78, bx: 18, by: 88 },
               ],
             }}
+            sizes="(min-width: 1024px) 46vw, 100vw"
             priority
           />
         }
@@ -69,7 +71,7 @@ export default async function HomePage({ params }: Props) {
             d={d}
             items={h.families.items.map((it) => ({
               ...it,
-              partFit: it.part === "partCaps" || it.part === "partBottles" ? ("cover" as const) : undefined,
+              partFit: it.part === "partBottles" ? ("cover" as const) : undefined,
             }))}
           />
         </div>
@@ -84,7 +86,7 @@ export default async function HomePage({ params }: Props) {
         text={h.projects.text}
         link={{ label: d.common.seeAll, href: "/realisations" }}
         items={[
-          { k: "partCaps", name: d.projects.pairs[0].name, alt: d.projects.pairs[0].partAlt, fit: "cover" },
+          { k: "partCaps", name: d.projects.pairs[0].name, alt: d.projects.pairs[0].partAlt },
           { k: "partPump", name: d.projects.pairs[1].name, alt: d.projects.pairs[1].partAlt },
           { k: "partTube", name: d.projects.pairs[2].name, alt: d.projects.pairs[2].partAlt },
           { k: "partBottles", name: d.projects.pairs[3].name, alt: d.projects.pairs[3].partAlt, fit: "cover" },

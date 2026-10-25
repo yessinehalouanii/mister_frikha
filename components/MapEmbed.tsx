@@ -27,6 +27,7 @@ export function MapEmbed({ src, title, openUrl, openLabel }: { src: string; titl
   }, []);
 
   return (
+    <figure>
     <div ref={ref} className="relative aspect-[4/3] overflow-hidden bg-steel sm:aspect-[21/9]">
       <a href={openUrl} target="_blank" rel="noopener" className="drawing-grid absolute inset-0 flex items-center justify-center p-6 text-center text-muted hover:text-ink">
         {openLabel}
@@ -41,5 +42,11 @@ export function MapEmbed({ src, title, openUrl, openLabel }: { src: string; titl
         />
       )}
     </div>
+    <figcaption className="mt-3 text-small">
+      <a href={openUrl} target="_blank" rel="noopener" className="link text-muted hover:text-ink">
+        {openLabel}
+      </a>
+    </figcaption>
+    </figure>
   );
 }

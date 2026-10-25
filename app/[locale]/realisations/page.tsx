@@ -43,7 +43,7 @@ export default async function ProjectsPage({ params }: Props) {
               moldAlt: x.moldAlt,
               part: x.part,
               partAlt: x.partAlt,
-              partFit: x.part === "partCaps" || x.part === "partBottles" ? ("cover" as const) : undefined,
+              partFit: x.part === "partBottles" ? ("cover" as const) : undefined,
             }))}
           />
         </div>

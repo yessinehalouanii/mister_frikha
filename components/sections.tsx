@@ -58,7 +58,7 @@ export function DimensionedPhoto({
   sizes?: string;
   aspect?: string;
   /** Numbered balloons on the photo (x/y in % of the frame), keyed to a legend. */
-  callouts?: { labels: string[]; legend: string; points: { x: number; y: number }[] };
+  callouts?: { labels: string[]; legend: string; points: { x: number; y: number; bx: number; by: number }[] };
 }) {
   return (
     <figure className={dims ? "relative ms-[34px] mt-[34px]" : "relative"}>
@@ -74,14 +74,26 @@ export function DimensionedPhoto({
       )}
       <div className={`relative ${aspect} overflow-hidden bg-paper-2`}>
         <Photo k={k} alt={alt} sizes={sizes} priority={priority} />
+        {callouts && (
+          // Drawing callouts: a hairline leader from each numbered balloon to the part it names.
+          <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full">
+            {callouts.points.map((pt, i) => (
+              <line key={i} x1={pt.bx} y1={pt.by} x2={pt.x} y2={pt.y} stroke="#121519" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+            ))}
+          </svg>
+        )}
         {callouts?.points.map((pt, i) => (
-          <span
-            key={i}
-            aria-hidden="true"
-            className="figure absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-graphite text-small text-ink ring-1 ring-white/70"
-            style={{ left: `${pt.x}%`, top: `${pt.y}%` }}
-          >
-            {i + 1}
+          <span key={i} aria-hidden="true">
+            <span
+              className="absolute h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-graphite"
+              style={{ left: `${pt.x}%`, top: `${pt.y}%` }}
+            />
+            <span
+              className="figure absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-small text-graphite ring-1 ring-graphite"
+              style={{ left: `${pt.bx}%`, top: `${pt.by}%` }}
+            >
+              {i + 1}
+            </span>
           </span>
         ))}
       </div>
@@ -151,6 +163,7 @@ export function PageHero({
   trail,
   media,
   children,
+  split = false,
 }: {
   d: Dict;
   h1: string;
@@ -158,7 +171,26 @@ export function PageHero({
   trail?: { name: string; href: AppPathname }[];
   media?: ReactNode;
   children?: ReactNode;
+  /** Home: title column beside the photo, sized so the datasheet strip below stays in the first viewport. */
+  split?: boolean;
 }) {
+  if (split && media) {
+    return (
+      <section className="drawing-grid">
+        <div className="grid gap-12 px-[var(--m)] pb-14 pt-10 lg:min-h-[calc(100svh-72px-7.5rem)] lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-10">
+          <div className="lg:col-span-6">
+            <h1 className="display text-display">{h1}</h1>
+            <p className="mt-8 max-w-[38ch] text-lead">{lead}</p>
+            {children}
+            <div className="mt-9">
+              <QuoteActions d={d} />
+            </div>
+          </div>
+          <div className="lg:col-span-6">{media}</div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="drawing-grid">
       <div className="px-[var(--m)] pb-16 pt-10 lg:pb-24 lg:pt-14">
