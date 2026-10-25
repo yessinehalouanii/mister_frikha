@@ -1,21 +1,7 @@
-import { LanguageProvider } from "@/components/LanguageProvider";
+import type { ReactNode } from "react";
 import "./globals.css";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Mechanical Industrial Company",
-  description:
-    "Design, mold & plastic injection — from idea to final part.",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body><LanguageProvider>{children}</LanguageProvider></body>
-    </html>
-  );
+// The <html> element is rendered by app/[locale]/layout.tsx so it can carry lang and dir.
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return children;
 }

@@ -1,6 +1,433 @@
-@config "../tailwind.config.ts";
 @import "tailwindcss";
 
+@theme {
+  --color-graphite: #121519;
+  --color-steel: #1b2026;
+  --color-steel-2: #262c34;
+  --color-ink: #eef1f4;
+  --color-muted: #a3acb8;
+  --color-paper: #eef1f4;
+  --color-paper-2: #e1e5ea;
+  --color-slate: #4a525c;
+  --color-blue: #2f67ba;
+  --color-blue-press: #24528f;
+  --color-blue-hi: #8ab0ea;
+  --color-blue-deep: #102a4d;
+
+  --font-sans: var(--font-archivo), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* five type steps */
+  --text-display: clamp(2.75rem, 1.1rem + 5.4vw, 6rem);
+  --text-display--line-height: 0.92;
+  --text-h2: clamp(2rem, 1.25rem + 2.6vw, 3.5rem);
+  --text-h2--line-height: 1;
+  --text-h3: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem);
+  --text-h3--line-height: 1.2;
+  --text-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.45;
+}
+
 :root {
-  color-scheme: light;
+  --m: clamp(20px, 3.2vw, 48px);
+  --line: rgb(214 222 232 / 0.13);
+  --line-strong: rgb(214 222 232 / 0.28);
+  --line-paper: rgb(18 21 25 / 0.14);
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-graphite);
+  color: var(--color-ink);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[lang="ar"] body {
+  line-height: 1.8;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue-hi);
+  outline-offset: 3px;
+}
+
+.on-paper :focus-visible {
+  outline-color: var(--color-blue);
+}
+
+html {
+  scrollbar-color: var(--color-steel-2) var(--color-graphite);
+}
+
+/* ── Type ─────────────────────────────────────────────────────────────── */
+
+.display {
+  font-weight: 760;
+  font-stretch: 78%;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.title {
+  font-weight: 700;
+  font-stretch: 85%;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+[lang="ar"] .display,
+[lang="ar"] .title {
+  font-stretch: 100%;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.prose-measure {
+  max-width: 62ch;
+}
+
+a.link {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.25em;
+}
+
+/* ── Drawing grid and dimension lines (the datasheet signature) ───────── */
+
+.drawing-grid {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+}
+
+.dim {
+  position: absolute;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.dim::before,
+.dim::after {
+  content: "";
+  position: absolute;
+}
+
+.dim > span {
+  position: absolute;
+  z-index: 1;
+  padding-inline: 10px;
+  background: var(--dim-bg, var(--color-graphite));
+  white-space: nowrap;
+}
+
+.dim-h {
+  inset-inline: 0;
+  top: -34px;
+  height: 20px;
+}
+
+.dim-h::before {
+  inset-inline: 0;
+  top: 10px;
+  border-top: 1px solid currentColor;
+}
+
+.dim-h::after {
+  inset: 0;
+  border-inline: 1px solid currentColor;
+}
+
+.dim-h > span {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  line-height: 20px;
+}
+
+.dim-v {
+  inset-block: 0;
+  inset-inline-start: -34px;
+  width: 20px;
+}
+
+.dim-v::before {
+  inset-block: 0;
+  left: 10px;
+  border-left: 1px solid currentColor;
+}
+
+.dim-v::after {
+  inset: 0;
+  border-block: 1px solid currentColor;
+}
+
+.dim-v > span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  line-height: 20px;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0 1.4rem;
+  font-weight: 600;
+  font-size: var(--text-body);
+  line-height: 1.2;
+  transition:
+    background-color 160ms ease-out,
+    color 160ms ease-out,
+    box-shadow 160ms ease-out,
+    transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-blue-press);
+}
+
+.btn-quiet {
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  color: var(--color-ink);
+}
+
+.btn-quiet:hover {
+  box-shadow: inset 0 0 0 1px var(--color-ink);
+}
+
+.on-paper .btn-quiet {
+  box-shadow: inset 0 0 0 1px var(--line-paper);
+  color: var(--color-graphite);
+}
+
+.on-paper .btn-quiet:hover {
+  box-shadow: inset 0 0 0 1px var(--color-graphite);
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--color-graphite);
+}
+
+.btn-light:hover {
+  background: var(--color-paper-2);
+}
+
+.arrow-flip {
+  transition: transform 160ms ease-out;
+}
+
+[dir="rtl"] .arrow-flip {
+  transform: scaleX(-1);
+}
+
+a:hover > .arrow-flip {
+  transform: translateX(3px);
+}
+
+[dir="rtl"] a:hover > .arrow-flip {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────────────── */
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq .chev {
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.faq details[open] .chev {
+  transform: rotate(180deg);
+}
+
+/* ── Mold → part frame inside the process heading ─────────────────────── */
+
+.swap {
+  position: relative;
+  display: inline-block;
+  width: 1.9em;
+  height: 0.78em;
+  vertical-align: -0.02em;
+  overflow: hidden;
+  background: var(--color-paper-2);
+}
+
+.swap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swap img + img {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .swap img {
+    animation: swap-a 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .swap img + img {
+    animation-name: swap-b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swap img { width: 50%; }
+  .swap img + img { left: 50%; opacity: 1; }
+}
+
+@keyframes swap-a {
+  0%, 40% { opacity: 1; transform: scale(1); }
+  50%, 90% { opacity: 0; transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes swap-b {
+  0%, 40% { opacity: 0; transform: scale(1.06); }
+  50%, 90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.06); }
+}
+
+/* ── Entrances (scroll-driven, CSS only; content is visible without support) */
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    .reveal-2 { animation-range: entry 8% entry 63%; }
+    .reveal-3 { animation-range: entry 16% entry 71%; }
+  }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.zoom-img {
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.group:hover .zoom-img {
+  transform: scale(1.03);
+}
+
+/* ── Logo intro (once per browser session; class set before first paint) ─ */
+
+.intro-overlay {
+  display: none;
+}
+
+html.intro .intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--color-graphite);
+  cursor: pointer;
+  animation: intro-out 380ms cubic-bezier(0.7, 0, 0.3, 1) 0.87s forwards;
+}
+
+html.intro .intro-overlay svg {
+  width: min(34vw, 180px);
+  height: auto;
+  animation: intro-lift 380ms cubic-bezier(0.7, 0, 0.3, 1) 0.87s forwards;
+}
+
+.intro-overlay .ring {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: intro-draw 560ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.intro-overlay .ring-2 { animation-delay: 80ms; }
+.intro-overlay .ring-3 { animation-delay: 160ms; }
+
+.intro-overlay .letters {
+  opacity: 0;
+  animation: intro-fill 300ms ease-out 480ms forwards;
+}
+
+@keyframes intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-fill { to { opacity: 1; } }
+@keyframes intro-out { to { opacity: 0; visibility: hidden; } }
+@keyframes intro-lift { to { transform: scale(0.9); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.intro .intro-overlay { display: none; }
+}
+
+/* ── Floating WhatsApp: appears once the hero (which has its own WhatsApp action) scrolls away */
+
+@supports (animation-timeline: scroll()) {
+  .fab-later {
+    animation: fab-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 480px;
+  }
+}
+
+@keyframes fab-in {
+  0%, 60% { opacity: 0; visibility: hidden; transform: translateY(12px); }
+  100% { opacity: 1; visibility: visible; transform: none; }
 }
