@@ -285,7 +285,7 @@ export function CatalogueRows({ items, d, headingLevel = 3 }: { items: Catalogue
             {it.part && (
               <figure className="reveal reveal-2">
                 <div className="aspect-[3/2] overflow-hidden bg-white">
-                  <Photo k={it.part} alt={it.partAlt ?? ""} sizes="(min-width: 1024px) 28vw, 50vw" fit={it.partFit ?? "contain"} className="zoom-img" />
+                  <Photo k={it.part} alt={it.partAlt ?? ""} sizes={it.partFit === "cover" ? "(min-width: 1024px) 40vw, 100vw" : "(min-width: 1024px) 28vw, 50vw"} fit={it.partFit ?? "contain"} className="zoom-img" />
                 </div>
                 <figcaption className="mt-2 text-small text-muted">{d.common.part}</figcaption>
               </figure>
@@ -343,12 +343,7 @@ export function Process({ d }: { d: Dict }) {
     <section className="on-paper bg-paper text-graphite">
       <div className="px-[var(--m)] py-24 lg:py-36">
         <h2 className="display reveal text-display">
-          {p.titleStart}{" "}
-          <span className="swap" aria-hidden="true">
-            <Photo k="moldUnscrewing" alt="" sizes="160px" />
-            <Photo k="partCaps" alt="" sizes="160px" fit="contain" className="bg-white" />
-          </span>{" "}
-          {p.titleEnd}
+          {p.titleStart} {p.titleEnd}
         </h2>
         <p className="reveal reveal-2 mt-8 max-w-[52ch] text-lead text-slate">{p.intro}</p>
         <ol className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 xl:grid-cols-6">
@@ -508,7 +503,11 @@ export function PartsGallery({
                   <Photo
                     k={it.k}
                     alt={it.alt}
-                    sizes="(min-width: 1280px) 16vw, (min-width: 768px) 33vw, 50vw"
+                    sizes={
+                      it.fit === "cover"
+                        ? "(min-width: 1280px) 36vw, (min-width: 768px) 70vw, 100vw"
+                        : "(min-width: 1280px) 16vw, (min-width: 768px) 33vw, 50vw"
+                    }
                     fit={it.fit ?? "contain"}
                     className={`zoom-img ${it.fit === "cover" ? "" : "p-3"}`}
                   />

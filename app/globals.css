@@ -294,56 +294,6 @@ a:hover > .arrow-flip {
   transform: rotate(180deg);
 }
 
-/* ── Mold → part frame inside the process heading ─────────────────────── */
-
-.swap {
-  position: relative;
-  display: inline-block;
-  width: 1.9em;
-  height: 0.78em;
-  vertical-align: -0.02em;
-  overflow: hidden;
-  background: var(--color-paper-2);
-}
-
-.swap img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swap img + img {
-  opacity: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .swap img {
-    animation: swap-a 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-  }
-  .swap img + img {
-    animation-name: swap-b;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .swap img { width: 50%; }
-  .swap img + img { left: 50%; opacity: 1; }
-}
-
-@keyframes swap-a {
-  0%, 40% { opacity: 1; transform: scale(1); }
-  50%, 90% { opacity: 0; transform: scale(1.06); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes swap-b {
-  0%, 40% { opacity: 0; transform: scale(1.06); }
-  50%, 90% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.06); }
-}
-
 /* ── Entrances (scroll-driven, CSS only; content is visible without support) */
 
 @media (prefers-reduced-motion: no-preference) {

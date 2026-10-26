@@ -110,8 +110,8 @@ export const fr = {
   },
 
   home: {
-    h1: "Fabricant de moules à Sfax",
-    lead: "Moules d’injection plastique et de soufflage, conçus et usinés dans notre atelier, du plan à la première pièce.",
+    h1: "Société Industrielle Mécanique",
+    lead: "Fabricant de moules d’injection plastique et de soufflage, conçus et usinés dans notre atelier de Sfax, du plan à la première pièce.",
     t0Strong: "Essai T0 offert",
     t0Rest: "sur notre presse de 180 tonnes : vous validez de vraies pièces avant toute correction.",
     heroAlt: "Moule d’injection à dévissage avec motoréducteur et chaîne, fabriqué par SIM à Sfax",
@@ -465,7 +465,7 @@ export const fr = {
     parts: [
       { image: "partValve" as ImageKey, name: "Vanne", alt: "Vanne plastique injectée dans un moule SIM" },
       { image: "partSprinkler" as ImageKey, name: "Arroseur", alt: "Arroseur plastique multi-pièces injecté" },
-      { image: "partLid" as ImageKey, name: "Couvercle", alt: "Couvercle plastique injecté" },
+      { image: "partLid" as ImageKey, name: "Couvercle de lingettes", alt: "Couvercle de boîte à lingettes injecté" },
       { image: "cavities" as ImageKey, name: "Empreintes multi-cavités", alt: "Usinage d’un insert multi-empreintes" },
     ],
   },

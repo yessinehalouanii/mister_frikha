@@ -126,7 +126,7 @@ components:
 
 SIM speaks the way a standard-components catalogue speaks: reference codes per mold type, spec tables, numbered callouts on a photo, dimension lines around the part, figures in a monospaced face. The site is that catalogue, set on a graphite ground with steel panels, one blue accent and square, flat surfaces. Proof comes from measured photographs and figures, never from decoration.
 
-Density is a working document's density: long pages in a 12-column grid, generous section padding, prose held to a short measure, and figures large enough to read from across a workshop. Long pages alternate graphite and pale steel "paper" bands, so the read has a dark/light rhythm while graphite stays the page ground. Motion is restrained: scroll-driven entrances, a slow mold-to-part crossfade inside one heading, a once-per-session logo draw, all removed under reduced motion.
+Density is a working document's density: long pages in a 12-column grid, generous section padding, prose held to a short measure, and figures large enough to read from across a workshop. Long pages alternate graphite and pale steel "paper" bands, so the read has a dark/light rhythm while graphite stays the page ground. Motion is restrained: scroll-driven entrances and a once-per-session logo draw, all removed under reduced motion.
 
 The system is trilingual (French first, English, Arabic RTL). Every direction-sensitive rule is written with logical properties, and Arabic gets its own type behaviour rather than an imitation of the Latin display.
 
@@ -250,8 +250,8 @@ A hairline-topped row per mold family: mono reference code in its own column (in
 ### T0 Band
 The one full-bleed SIM Blue field: uppercase display title, lead, square white bullets, light and quiet buttons, and the 180-t press photo with its tonnage as a mono figure.
 
-### Process with Mold-to-Part Frame
-A paper band whose display heading carries an inline frame (1.9em by 0.78em) that crossfades between the mold and the part it makes every 7s; under reduced motion both images sit side by side. Six steps follow with 2px top rules and mono numbers, the T0 step in SIM Blue with a 4px rule.
+### Process
+A paper band with a plain display heading ("Du plan à la pièce"; the owner asked for no image inside it). Six steps follow with 2px top rules and mono numbers, the T0 step in SIM Blue with a 4px rule.
 
 ### Spec Table and FAQ
 Tables are hairline rows, muted row labels at 42% width, mono values at Title size with units in muted. The FAQ is a list of native details elements on hairlines, questions at Lead size, a chevron that turns 180° in 200ms.

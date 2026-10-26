@@ -59,7 +59,7 @@ export async function renderOg(rawLocale: string) {
           <div
             style={{
               fontFamily: "ArchivoCondensed",
-              fontSize: 108,
+              fontSize: 88,
               lineHeight: 0.92,
               textTransform: "uppercase",
               letterSpacing: -2,

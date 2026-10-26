@@ -106,8 +106,8 @@ export const en: Dict = {
   },
 
   home: {
-    h1: "Mold maker in Sfax, Tunisia",
-    lead: "Plastic injection and blow molds, designed and machined in our own workshop, from the drawing to the first part.",
+    h1: "Société Industrielle Mécanique",
+    lead: "Mold maker for plastic injection and blow molds, designed and machined in our own workshop in Sfax, Tunisia, from the drawing to the first part.",
     t0Strong: "Free T0 trial",
     t0Rest: "on our 180-ton press: you approve real parts before any correction.",
     heroAlt: "Unscrewing injection mold with gear motor and chain drive, built by SIM in Sfax",
@@ -379,7 +379,7 @@ export const en: Dict = {
     parts: [
       { image: "partValve", name: "Valve", alt: "Plastic valve molded in a SIM mold" },
       { image: "partSprinkler", name: "Sprinkler", alt: "Multi-part molded plastic sprinkler" },
-      { image: "partLid", name: "Lid", alt: "Molded plastic lid" },
+      { image: "partLid", name: "Wet-wipe lid", alt: "Molded wet-wipe container lid" },
       { image: "cavities", name: "Multi-cavity inserts", alt: "Machining a multi-cavity insert" },
     ],
   },
